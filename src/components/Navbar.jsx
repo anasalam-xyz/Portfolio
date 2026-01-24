@@ -1,43 +1,69 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import NavItem from "./NavItem";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [active, setActive] = useState("");
+    const sections = ["home","about", "skills", "projects", "connect"];
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActive(entry.target.id);
+                    }
+                });
+            },
+            {
+                rootMargin: "-50% 0px -50% 0px", // center of screen - testing ig
+            }
+        );
+
+        sections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
-        <nav className="top-0 sticky px-4 md:px-10 py-2 md:py-4 flex flex-row items-center justify-between shadow-sm border-b border-gray-100">
-            <div className="h-full py-1 flex flex-col justify-center">
-                <span className="font-black text-lg md:text-xl">
-                    <a href="#home">Anas Alam</a>
-                </span>
-                <span className="text-gray-500 text-xs">
-                    Full Stack Developer
-                </span>
-            </div>
-            <div className="px-4 h-full">
-                <ul className="hidden mx-1 md:flex flex-row gap-12 items-center justify-between text-sm font-thin text-gray-700">
-                    <li><a className="relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" href="#about">About</a></li>
-                    <li><a className="relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" href="#skills">Skills</a></li>
-                    <li><a className="relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" href="#projects">Projects</a></li>
-                    <li><a className="relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" href="#contact">Connect</a></li>
-                </ul>
-                {isOpen || (<svg onClick={()=>setIsOpen(true)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="md:hidden size-5">
-                    <path fillRule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-                </svg>)}
-                {isOpen && (<svg onClick={()=>setIsOpen(false)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="md:hidden size-5">
-                    <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                </svg>)}
-            </div>
-        </nav>
-        {isOpen && (
-            <div className="px-8 absolute left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
-                <ul className="text-base font-thin text-gray-700">
-                    <li><a className="my-4 relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" onClick={()=>setIsOpen(false)} href="#about">About</a></li>
-                    <li><a className="my-4 relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" onClick={()=>setIsOpen(false)} href="#skills">Skills</a></li>
-                    <li><a className="my-4 relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" onClick={()=>setIsOpen(false)} href="#projects">Projects</a></li>
-                    <li><a className="my-4 relative inline-block hover:text-black transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:after:left-0" onClick={()=>setIsOpen(false)} href="#contact">Connect</a></li>
-                </ul>
-            </div>
-        )}
+            <nav className="bg-white top-0 sticky px-4 md:px-10 py-2 md:py-4 flex flex-row items-center justify-between shadow-sm border-b border-gray-100">
+                <div className="h-full py-1 flex flex-col justify-center">
+                    <span className="font-black text-lg md:text-xl">
+                        <a href="#home">Anas Alam</a>
+                    </span>
+                    <span className="text-gray-500 text-xs">
+                        Full Stack Developer
+                    </span>
+                </div>
+                <div className="px-4 h-full">
+                    <ul className="hidden mx-1 md:flex flex-row gap-12 items-center justify-between text-sm font-thin text-gray-700">
+                        <NavItem name="Home" active={active==="home"}/>
+                        <NavItem name="About" active={active==="about"}/>
+                        <NavItem name="Skills" active={active==="skills"}/>
+                        <NavItem name="Projects" active={active==="projects"}/>
+                        <NavItem name="Connect" active={active==="connect"}/>
+                    </ul>
+                    <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-6 h-4">
+                        <span className={`absolute w-5 h-[2px] bg-black transition-all duration-800 ${isOpen ? "-rotate-135 top-2" : "top-0"}`}></span>
+                        <span className={`absolute w-5 h-[2px] bg-black transition-opacity duration-700 ${isOpen ? "opacity-0" : "top-2"}`}></span>
+                        <span className={`absolute w-5 h-[2px] bg-black transition-all duration-800 ${isOpen ? "-rotate-45 top-2" : "top-4"}`}></span>
+                    </button>
+                </div>
+            </nav>
+            {isOpen && (
+                <div className="px-8 absolute left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
+                    <ul className="py-8 flex flex-col justify-around gap-6 text-base font-thin text-gray-700">
+                        <NavItem name="Home" active={active==="home"}/>
+                        <NavItem name="About" active={active==="about"}/>
+                        <NavItem name="Skills" active={active==="skills"}/>
+                        <NavItem name="Projects" active={active==="projects"}/>
+                        <NavItem name="Connect" active={active==="connect"}/>
+                    </ul>
+                </div>
+            )}
         </>
     );
 }
