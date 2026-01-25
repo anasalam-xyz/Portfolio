@@ -29,9 +29,9 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-white top-0 sticky px-4 md:px-10 py-2 md:py-4 flex flex-row items-center justify-between shadow-sm border-b border-gray-100">
+            <nav className="font-sans bg-white z-10 top-0 sticky px-4 md:px-10 py-2 md:py-4 flex flex-row items-center justify-between shadow-sm border-b border-gray-100">
                 <div className="h-full py-1 flex flex-col justify-center">
-                    <span className="font-black text-lg md:text-xl">
+                    <span className="font-bold text-lg md:text-xl">
                         <a href="#home">Anas Alam</a>
                     </span>
                     <span className="text-gray-500 text-xs">
@@ -39,7 +39,7 @@ export default function Navbar() {
                     </span>
                 </div>
                 <div className="px-4 h-full">
-                    <ul className="hidden mx-1 md:flex flex-row gap-12 items-center justify-between text-sm font-thin text-gray-700">
+                    <ul className="hidden mx-1 md:flex flex-row gap-12 items-center justify-between text-sm font-light text-gray-700">
                         <NavItem name="Home" active={active==="home"}/>
                         <NavItem name="About" active={active==="about"}/>
                         <NavItem name="Skills" active={active==="skills"}/>
@@ -54,7 +54,7 @@ export default function Navbar() {
                 </div>
             </nav>
             {isOpen && (
-                <div className="px-8 absolute left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
+                <div className="z-9 bg-white sticky px-8 absolute top-16 left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
                     <ul className="py-8 flex flex-col justify-around gap-6 text-base font-thin text-gray-700">
                         <NavItem name="Home" active={active==="home"}/>
                         <NavItem name="About" active={active==="about"}/>
