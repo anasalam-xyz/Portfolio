@@ -32,7 +32,7 @@ export default function Navbar() {
             <nav className="font-sans bg-white z-10 top-0 sticky px-4 md:px-10 py-2 md:py-4 flex flex-row items-center justify-between shadow-sm border-b border-gray-100">
                 <div className="h-full py-1 flex flex-col justify-center">
                     <span className="font-bold text-lg md:text-xl">
-                        <a href="#home">Anas Alam</a>
+                        <a href="#">Anas Alam</a>
                     </span>
                     <span className="text-gray-500 text-xs">
                         Full Stack Developer
