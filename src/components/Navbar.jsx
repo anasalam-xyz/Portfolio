@@ -54,7 +54,7 @@ export default function Navbar() {
                 </div>
             </nav>
             {isOpen && (
-                <div className="z-9 bg-white sticky px-8 absolute top-16 left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
+                <div className="z-9 bg-white px-8 fixed top-16 left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
                     <ul className="py-8 flex flex-col justify-around gap-6 text-base font-thin text-gray-700">
                         <NavItem name="Home" active={active==="home"}/>
                         <NavItem name="About" active={active==="about"}/>

@@ -15,8 +15,8 @@ export default function About() {
                 Over time, that mindset pulled me toward technology —
                 where I now build web applications that are clean, reliable, and easy to use.
             </p>
-            <div className="my-6 flex flex-col md:flex-row justify-between">
-                <div className="md:w-[50%]">
+            <div className="my-6 flex flex-col lg:flex-row justify-between">
+                <div className="lg:w-[50%]">
                     <h3 className="text-2xl md:text-4xl font-black">Full Stack</h3>
                     <h3 className="text-gray-800 text-2xl md:text-4xl font-black">Developer</h3>
                     <p className="px-4 my-6 border-l-4 border-gray-700">
@@ -24,7 +24,7 @@ export default function About() {
                         I focus on performance, clean code, and robust backend systems using technologies like React and Node.js.
                     </p>
                 </div>
-                <div className="md:w-[50%] px-6 flex flex-col justify-between">
+                <div className="lg:w-[50%] px-6 flex flex-col justify-between">
                     <div className="px-2 md:px-10 grid grid-cols-3 gap-2 md:gap-4">
                         <div className="text-gray-800 text-sm px-1 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
                             React

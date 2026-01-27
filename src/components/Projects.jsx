@@ -74,7 +74,7 @@ export default function Projects() {
                 <span className="before:block before:h-[2px] before:w-16 
              before:bg-gradient-to-l before:from-black before:to-transparent"></span>
             </h3>
-            <div className="my-2 md:my-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
+            <div className="my-2 md:my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
                 {projects.map((project) => (
                     <ProjectCard key={project.name} colSpan={project.colSpan} name={project.name} description={project.description} alt={project.alt} src={project.src} demo={project.demo} gitRepo={project.gitRepo} tech={project.tech} fallbackImg={project.fallbackImg}/>
                 ))}

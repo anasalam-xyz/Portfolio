@@ -19,7 +19,7 @@ export default function Hero() {
                         {/* Alam/&gt; */}Alam
                     </div>
                 </div>
-                <div className="fade-up delay-3 py-2 flex items-center gap-4 w-full md:w-[40%]">
+                <div className="fade-up delay-3 py-3 flex items-center gap-4 w-full md:w-[40%]">
                     <span className="flex-1 min-w-[40px] h-[2px] bg-gray-800"></span>
                     <span className="whitespace-nowrap font-medium text-lg md:text-2xl">
                         FULL STACK DEVELOPER
@@ -38,7 +38,7 @@ export default function Hero() {
                 </div>
             </div>
             <div className="fade-up delay-5 my-8 md:my-16 flex flex-row md:flex-col items-center gap-6 text-sm text-gray-500 md:self-end self-start">
-                <a href="https://www.linkedin.com/in/anasalam-xyz/" target="_blank" className="flex items-center md:flex-col gap-1 hover:text-black hover:scale-102 transition-all duration-200 ease-out xl:hover:-translate-y-1 md:hover:-translate-x-1">
+                <a href="https://www.linkedin.com/in/anasalam-xyz/" target="_blank" className="flex items-center md:flex-col gap-1 hover:text-black hover:scale-102 transition-all duration-200 ease-out hover:-translate-y-1 md:hover:-translate-x-1">
                     <span className="hidden md:block vertical-text">LinkedIn</span>
                     <FaLinkedin className="-rotate-90"/>
                     <span className="md:hidden">LinkedIn</span>

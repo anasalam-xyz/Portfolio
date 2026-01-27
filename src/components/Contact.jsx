@@ -16,7 +16,7 @@ export default function Contact() {
                 <span className="before:block before:h-[2px] before:w-10 md:before-16 
              before:bg-gradient-to-l before:from-black before:to-transparent"></span>
             </h3>
-            <div className="mt-12 md:px-42 flex flex-col md:flex-row gap-8">
+            <div className="mt-12 lg:px-42 flex flex-col md:flex-row gap-8">
                 <div className="group w-full md:w-84 inline-flex gap-4 justify-between border border-gray-300 rounded-xl px-4 py-4 hover:border-gray-400 hover:shadow-lg">
                     <a href="https://www.linkedin.com/in/anasalam-xyz/" className="flex items-center justify-center h-12 w-12 rounded-xl bg-gray-800 text-white" target="_blank">
                         <FaLinkedinIn />
@@ -40,7 +40,7 @@ export default function Contact() {
                     <FaArrowRight className="text-gray-300 text-xs group-hover:text-gray-800 group-hover:translate-x-1 transition-all duration-300 delay-100" />
                 </div>
             </div>
-            <div className="md:mx-42 flex flex-col justify-center items-center gap-2 border border-gray-300 rounded-xl px-4 py-4 hover:shadow-sm">
+            <div className="lg:mx-42 flex flex-col justify-center items-center gap-2 border border-gray-300 rounded-xl px-4 py-4 hover:shadow-sm">
                 <IoChatbubbleOutline className="text-xl" />
                 <p className="font-bold text-lg">Quick Message</p>
                 <p className="text-sm text-gray-600">Prefer to send a direct message?</p>
