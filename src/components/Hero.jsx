@@ -32,7 +32,7 @@ export default function Hero() {
                         Email Me
                         <FaArrowRight/>
                     </a>
-                    <a href="#" className="inline-flex items-center justify-center rounded-xl px-13 py-4 text-sm font-medium border border-gray-300 text-gray-800 hover:scale-101 hover:border-gray-400 transition-colors">
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl px-13 py-4 text-sm font-medium border border-gray-300 text-gray-800 hover:scale-101 hover:border-gray-400 transition-colors">
                         Resume
                     </a>
                 </div>
