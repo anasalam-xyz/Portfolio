@@ -46,8 +46,8 @@ export default function About() {
                         </div>
                     </div>
                     <div className="my-4 text-end w-full px-4 py-4 bg-gradient-to-l from-gray-100 to-white p-6 text-white border-r border-gray-400">
-                        <p className="text-gray-600">Based In</p>
-                        <p className="text-gray-800">Ranchi, Jharkhand</p>
+                        <p className="text-gray-600 text-xs">Based In</p>
+                        <p className="text-gray-800 text-sm">Ranchi, Jharkhand</p>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ export function useInView(options = {}) {
     const [isVisible, setIsVisible] = useState(false);
     const hasAnimated = useRef(false);
     useEffect(() => {
+        if (!ref.current) return;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated.current) {

@@ -26,13 +26,13 @@ export default function Hero() {
                     </span>
                     <span className="flex-1 min-w-[40px] h-[2px] bg-gray-800"></span>
                 </div>
-                <p className="w-full md:w-[70%] text-base md:text-lg text-gray-600">Building clean, reliable web applications with a focus on usability and performance. </p>
+                <p className="fade-up delay-4 w-full md:w-[70%] text-base md:text-lg text-gray-600">Building clean, reliable web applications with a focus on usability and performance. </p>
                 <div className="fade-up delay-4 mt-6 flex flex-wrap gap-4">
-                    <a href="mailto:anasalam.xyz@gmail.com" className="inline-flex gap-2 items-center justify-center rounded-xl px-10 py-4 text-sm font-medium bg-gray-900 text-white hover:scale-101 hover:bg-gray-800 transition-colors">
+                    <a href="mailto:anasalam.xyz@gmail.com" className="group inline-flex gap-2 items-center justify-center rounded-xl px-10 py-4 text-sm font-medium bg-gray-900 text-white hover:scale-101 hover:bg-gray-800 transition-colors">
                         Email Me
-                        <FaArrowRight/>
+                        <FaArrowRight className="group-hover:translate-x-1 transition-translate duration-300"/>
                     </a>
-                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl px-13 py-4 text-sm font-medium border border-gray-300 text-gray-800 hover:scale-101 hover:border-gray-400 transition-colors">
+                    <a href="/Anas_Alam_Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl px-13 py-4 text-sm font-medium border border-gray-300 text-gray-800 hover:scale-101 hover:border-gray-400 transition-colors">
                         Resume
                     </a>
                 </div>

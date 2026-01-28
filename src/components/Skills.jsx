@@ -5,6 +5,8 @@ import { GrMysql } from "react-icons/gr";
 import { FiLink } from "react-icons/fi";
 import SkillCard from "./SkillCard";
 
+import { useInView } from "../hooks/useInView";
+
 export default function Skills() {
     const skills = [
         { name: "React", icon: SiReact },
@@ -23,6 +25,9 @@ export default function Skills() {
         { name: "MySQL", icon: GrMysql },
         { name: "Redux", icon: SiRedux },
     ];
+
+    const [ref, isVisible] = useInView();
+
     return (
         <section id="skills" className="w-full flex flex-col gap-6 py-4">
             <span className="flex-1 min-w-[40px] h-[3px] bg-gradient-to-r from-gray-800/30 to-gray-800"></span>
@@ -34,17 +39,18 @@ export default function Skills() {
                 <span className="before:block before:h-[2px] before:w-10 md:before:w-16 
              before:bg-gradient-to-l before:from-black before:to-transparent"></span>
             </h3>
-            <p className="text-gray-600 max-w-3xl text-base md:text-base">
+            <p className="text-gray-600 text-base md:text-base">
                 I work with a mix of front-end and back-end technologies to build
                 scalable, responsive, and maintainable web applications. Here are
                 some of the tools and frameworks I frequently use:
             </p>
             <div className="flex flex-wrap justify-center items-center gap-3">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {skills.map((skill, i) => (
                         <SkillCard
                             key={skill.name}
                             name={skill.name}
+                            isVisible={isVisible}
                             Icon={skill.icon}
                             delay={i * 100}
                         />

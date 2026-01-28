@@ -1,5 +1,6 @@
 import {GitHubCalendar} from "react-github-calendar";
 import { FaGithub } from "react-icons/fa6";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Experience() {
     return (
@@ -16,10 +17,15 @@ export default function Experience() {
             </div>
             <GitHubCalendar
                 username="anasalam-xyz"
+                colorScheme="light" 
                 blockSize={12}
                 blockMargin={4}
                 fontSize={10}
             />
+            <a href="https://github.com/anasalam-xyz/" target="_blank" className="hover:text-gray-800 hover:translate-x-1 py-2 inline-flex gap-2 text-gray-600 text-xs">
+                View Github Profile
+                <FaExternalLinkAlt/>
+            </a>
         </div>
     );
 }

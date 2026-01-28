@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [active, setActive] = useState("");
-    const sections = ["home","about", "skills", "projects", "connect"];
+    const sections = ["home", "about", "skills", "projects", "connect"];
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -40,11 +40,11 @@ export default function Navbar() {
                 </div>
                 <div className="px-4 h-full">
                     <ul className="hidden mx-1 md:flex flex-row gap-12 items-center justify-between text-sm font-light text-gray-700">
-                        <NavItem name="Home" active={active==="home"}/>
-                        <NavItem name="About" active={active==="about"}/>
-                        <NavItem name="Skills" active={active==="skills"}/>
-                        <NavItem name="Projects" active={active==="projects"}/>
-                        <NavItem name="Connect" active={active==="connect"}/>
+                        <NavItem name="Home" active={active === "home"} />
+                        <NavItem name="About" active={active === "about"} />
+                        <NavItem name="Skills" active={active === "skills"} />
+                        <NavItem name="Projects" active={active === "projects"} />
+                        <NavItem name="Connect" active={active === "connect"} />
                     </ul>
                     <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-6 h-4">
                         <span className={`absolute w-5 h-[2px] bg-black transition-all duration-800 ${isOpen ? "-rotate-135 top-2" : "top-0"}`}></span>
@@ -53,17 +53,21 @@ export default function Navbar() {
                     </button>
                 </div>
             </nav>
-            {isOpen && (
-                <div className="z-9 bg-white px-8 fixed top-16 left-0 w-full bg-white border-b border-gray-100 md:hidden shadow-sm border-b border-gray-100">
-                    <ul className="py-8 flex flex-col justify-around gap-6 text-base font-thin text-gray-700">
-                        <NavItem name="Home" active={active==="home"}/>
-                        <NavItem name="About" active={active==="about"}/>
-                        <NavItem name="Skills" active={active==="skills"}/>
-                        <NavItem name="Projects" active={active==="projects"}/>
-                        <NavItem name="Connect" active={active==="connect"}/>
-                    </ul>
-                </div>
-            )}
+            <div className={`
+                z-9 fixed top-16 left-0 w-full
+                bg-white px-8
+                border-b border-gray-100 shadow-sm
+                md:hidden
+                transform transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+                ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0 pointer-events-none"}`}>
+                <ul className="py-8 flex flex-col gap-6 text-base font-thin text-gray-700">
+                    <NavItem name="Home" active={active === "home"} />
+                    <NavItem name="About" active={active === "about"} />
+                    <NavItem name="Skills" active={active === "skills"} />
+                    <NavItem name="Projects" active={active === "projects"} />
+                    <NavItem name="Connect" active={active === "connect"} />
+                </ul>
+            </div>
         </>
     );
 }
