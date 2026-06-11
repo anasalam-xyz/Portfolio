@@ -1,29 +1,31 @@
-import { SiReact, SiExpress, SiMongodb, SiPython, SiTailwindcss, SiRedux } from "react-icons/si";
+import { SiReact, SiExpress, SiMongodb, SiPython, SiTailwindcss, SiPostgresql } from "react-icons/si";
 import { FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { GrMysql } from "react-icons/gr";
 import { FiLink } from "react-icons/fi";
+import { RiNextjsFill } from "react-icons/ri";
 import SkillCard from "./SkillCard";
 
 import { useInView } from "../hooks/useInView";
 
 export default function Skills() {
     const skills = [
-        { name: "React", icon: SiReact },
-        { name: "Express", icon: SiExpress },
+        { name: "Next.js", icon: RiNextjsFill },
+        { name: "React.js", icon: SiReact },
+        { name: "Node.js", icon: FaNodeJs },
+        { name: "PostgreSQL", icon: SiPostgresql},
         { name: "MongoDB", icon: SiMongodb },
-        { name: "JavaScript", icon: IoLogoJavascript },
-        { name: "NodeJS", icon: FaNodeJs },
-        { name: "TailwindCSS", icon: SiTailwindcss },
+        { name: "MySQL", icon: GrMysql },
+        { name: "Express.js", icon: SiExpress },
         { name: "REST API", icon: FiLink },
         { name: "Git", icon: FaGitAlt },
         { name: "Github", icon: FaGithub },
+        { name: "TailwindCSS", icon: SiTailwindcss },
+        { name: "Java", icon: FaJava },
+        { name: "JavaScript", icon: IoLogoJavascript },
+        { name: "Python", icon: SiPython },
         { name: "HTML", icon: FaHtml5 },
         { name: "CSS", icon: FaCss3Alt },
-        { name: "Java", icon: FaJava },
-        { name: "Python", icon: SiPython },
-        { name: "MySQL", icon: GrMysql },
-        { name: "Redux", icon: SiRedux },
     ];
 
     const [ref, isVisible] = useInView();

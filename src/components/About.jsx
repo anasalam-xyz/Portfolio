@@ -27,22 +27,22 @@ export default function About() {
                 <div className="lg:w-[50%] px-6 flex flex-col justify-between">
                     <div className="px-2 md:px-10 grid grid-cols-3 gap-2 md:gap-4">
                         <div className="text-gray-800 text-sm px-1 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
-                            React
+                            Next.js
                         </div>
                         <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
-                            Express
+                            React.js
+                        </div>
+                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
+                            Node.js
+                        </div>
+                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
+                            Express.js
+                        </div>
+                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
+                            PostgreSQL
                         </div>
                         <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
                             MongoDB
-                        </div>
-                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
-                            RestAPI
-                        </div>
-                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
-                            Java
-                        </div>
-                        <div className="text-gray-800 text-sm px-2 py-2 rounded-lg border border-gray-400 text-center shadow-sm hover:border-gray-700 hover:shadow-md transition-shadow duration-200">
-                            Python
                         </div>
                     </div>
                     <div className="my-4 text-end w-full px-4 py-4 bg-gradient-to-l from-gray-100 to-white p-6 text-white border-r border-gray-400">

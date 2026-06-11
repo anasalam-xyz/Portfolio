@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import roundoneImg from "../assets/roundone-screenshot.jpg";
+import smallmbtiImg from "../assets/small-mbti-screenshot.jpg";
 import worknestImg from "../assets/worknest-dashboard.png";
 import newsAppImg from "../assets/newsapp-category.jpg";
 import notebookAppImg from "../assets/notebook-dashboard.png";
@@ -7,6 +9,17 @@ import habitTrackerImg from "../assets/habit-tracker-best-worst.png";
 
 export default function Projects() {
     const projects = [
+    	{
+            colSpan: 1,
+            name: "RoundOne",
+            description: "An AI interview platform where users configure a session and practice with a conversational AI that adapts follow-up questions based on their answers",
+            alt: "RoundOne Screenshot",
+            src: roundoneImg,
+            demo: "https://getroundone.vercel.app/",
+            gitRepo: "https://github.com/anasalam-xyz/RoundOne",
+            tech: ["Next.js", "PostgreSQL", "Supabase", "Gemini API"],
+            fallbackImg: null 
+        },
         {
             colSpan: 1,
             name: "WorkNest",
@@ -16,6 +29,17 @@ export default function Projects() {
             demo: "https://worknest-teams.vercel.app/",
             gitRepo: "https://github.com/anasalam-xyz/worknest",
             tech: ["React", "Express", "MongoDB"],
+            fallbackImg: null 
+        },
+        {
+            colSpan: 1,
+            name: "SmallMBTI",
+            description: "A Personality test app which asks a set of 40 questions to assign yourself an MBTI type.",
+            alt: "SmallMBTI Screenshot",
+            src: smallmbtiImg,
+            demo: "https://small-mbti.vercel.app/",
+            gitRepo: "https://github.com/anasalam-xyz/small-mbti",
+            tech: ["Next.js", "TypeScript"],
             fallbackImg: null 
         },
         {
